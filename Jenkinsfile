@@ -27,7 +27,7 @@ pipeline {
 
 		stage('Test') {
             steps {
-                sh 'npm test'
+                sh 'npm start & sleep 1 set +x'
             }
         }
 
