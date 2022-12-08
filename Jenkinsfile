@@ -55,11 +55,9 @@ pipeline {
                         sh 'gcloud auth configure-docker'
                         sh 'sudo docker push gcr.io/tech-rnd-project/node'
 
-						sh 'curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl'
-
-						sh 'chmod +x kubectl'
-
-						sh "sudo mv kubectl \$(which kubectl)"
+			sh 'curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl'
+		        sh 'chmod +x kubectl'
+              sh "sudo mv kubectl \$(which kubectl)"
                 }
             }
         }
