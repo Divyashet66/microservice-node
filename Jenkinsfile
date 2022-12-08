@@ -18,12 +18,18 @@ pipeline {
 			    	checkout scm
 		    }
 	    }
-	    stage('build') {
+	    stage('Build') {
               steps {
                   echo 'building the software'
                   sh 'npm install'
               }
           }
+
+		stage('Test') {
+            steps {
+                sh 'npm test '
+            }
+        }
 
 	    
 	    stage('Build Docker Image') {
